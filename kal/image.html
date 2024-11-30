@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil Kalkulator - Gambar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+    .container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+    }
+    .image {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Hasil Perhitungan Anda</h2>
+    <p>Hasil perhitungan Anda adalah: <span id="result"></span></p>
+    <img class="image" src="asset/hbd.jfif" alt="Hasil Gambar">
+    <img class="image" src="asset/gm.jfif" alt="Hasil Gambar">
+  </div>
+
+  <script>
+    // Mendapatkan query parameter 'result' dari URL
+    const params = new URLSearchParams(window.location.search);
+    const result = params.get("result");
+
+    // Menampilkan hasil di halaman
+    if (result) {
+      document.getElementById('result').textContent = result;
+    } else {
+      document.getElementById('result').textContent = "Tidak ada hasil.";
+    }
+  </script>
+</body>
+</html>
